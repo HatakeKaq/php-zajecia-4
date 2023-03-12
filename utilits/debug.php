@@ -1,0 +1,24 @@
+<?php
+
+function dump($params)
+
+{
+
+    echo(
+        `<
+        div style="
+        dislay:inline-block;
+        background:red;
+        border-1px solid gray;
+        padding:10px;
+        color:white;
+        ">
+        <pre>
+        `);
+
+        print_r($params);
+        echo(`</pre></div><br>`);
+}
+
+
+?>
