@@ -1,17 +1,21 @@
-<?php 
-declare(strict_types= 1);
-namespace Appł
-/*
+<?php
+declare(strict_types=1);
+ 
+namespace App;
+ 
+/* 
 include
 include_once
 require
 require_once
 */
+ 
+include_once('./src/utilits/debug.php');
+ 
+ 
+ 
+dump('test');
+dump('==== TEST DWA ====');
 
-include_once ("./src/utilits/debug.php");
 
 
-dump(`test`);
-dump(`====TEST DWA====`);
-
-?>
