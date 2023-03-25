@@ -24,9 +24,21 @@ include_once('./src/utilits/debug.php');
  
 if ($action ==='create')
 {
-    $viewParams ['resultCreate'] = 'Udało sie dodać notatke!';
-}else{
-    $viewParams['resultList']='Wyswietlamy liste notatek';
+    $page= 'create';
+    $created = false;
+
+if(!empty($_POST)){
+   $viewParams = [
+    'title' => $_POST['title'],
+    'description' => $_POST['description'],
+   ];
+   $created = true;
+}
+$vieParams['created']=$created;
+
+}
+else{
+    $page = 'list';
 }
 
 
