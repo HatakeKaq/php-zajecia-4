@@ -16,15 +16,20 @@ require_once
  include_once('src/view.php');
 include_once('./src/utilits/debug.php');
  
+ const DEFAULT_ACTION = 'list';
+
+ $action = $_GET['action'] ??DEFAULT_ACTION;
+
+ $viewParams=[];
  
- 
-if(!empty($GET[`action`])){
-    $action = $GET [`action`];
-} else {
-    $action = null;
+if ($action ==='create')
+{
+    $viewParams ['resultCreate'] = 'Udało sie dodać notatke!';
+}else{
+    $viewParams['resultList']='Wyswietlamy liste notatek';
 }
 
 
-$action = $_GET['action'] ??null;
+
 $view = new View();
-$view->render($action);
+$view->render($action,$viewParams);

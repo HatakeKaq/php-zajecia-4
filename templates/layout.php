@@ -21,13 +21,14 @@
     </nav>
     <article>
        <?php
+       require_once("templates/pages/$page.php");
 
-    if($page==='create'){
+    /*if($page==='create'){
         include_once('./templates/pages/create.php');
     }else{
         include_once('./templates/pages/list.php');
     }
-       ?>
+       */?>
     </article>
 
 
