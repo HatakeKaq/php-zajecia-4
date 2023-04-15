@@ -1,12 +1,8 @@
 <b>
-    <?php echo $params ['resultCreate']??"";?>
+    <?php echo $params['resultCreate'] ?? ""; ?>
 </b>
-
-
-
 <h3>Nowa notatka</h3>
 <div>
-    Tu bedzie formularz Notatki
     <?php if ($params['created']) : ?>
         <div>
             <div>Tytuł: <?php echo $params['title'] ?></div>
