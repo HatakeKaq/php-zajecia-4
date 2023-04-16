@@ -31,7 +31,7 @@ class Database
             $title=$this->conn->quote($data['title']);
             $description=$this->conn->quote($data['description']);
             $created=date('Y-m-d H:i:s');
-            $query="INSERT INTO notes(title,desription,created) VALUES($title,$descriptio,$created)";
+            $query="INSERT INTO notes(title,desription,created) VALUES($title,$description,$created)";
             $result=$this->conn->exec($query);
         }
         catch(throwable $e){
