@@ -3,17 +3,17 @@
 declare(strict_types=1);
 
 namespace App;
-require_once('./Exeption/AppExeption.php');
-require_once('./Exeption/StorageExeption.php');
-require_once('./Exeption/ConfigurationExeption.php');
+require_once('./Exception/AppException.php');
+require_once('./Exception/StorageException.php');
+require_once('./Exception/ConfigurationException.php');
 include_once('./src/Controller.php');
 include_once('./src/utils/debug.php');
 require_once('./config/config.php');
 
 
-use App\Exeption\AppExeption;
-use App\Exeption\StorageExeption;
-use App\Exeption\ConfigurationExeption;
+use App\Exeption\AppException;
+use App\Exeption\StorageException;
+use App\Exeption\ConfigurationException;
 use Throwable;
 
 

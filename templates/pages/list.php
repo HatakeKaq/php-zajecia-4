@@ -1,5 +1,21 @@
 <div>
     <section>
+
+    <div class="message">
+    <?php
+    if(!empty($params['error'])){
+        switch($params['error']){
+            case 'noteNotFound';
+            echo 'Notatka nie zostala znaleziona!';
+            break;
+            case 'missingNoteId';
+            echo 'Niepoprawny indetyfikator notatki';
+            break;
+        }
+    }
+    ?>
+    </div>
+    
 <div class="message">
     <?php
     if(!empty($params['before'])){
@@ -32,10 +48,10 @@
                 <tbody>
                     <?php foreach ($params['notes'] as $note):?>
                     <tr>
-                        <td><?php echo $note['id']?></td>
-                        <td><?php echo $note['title']?></td>
-                        <td><?php echo $note['created']?></td>
-                        <td>optcje</td>
+                        <td><?php echo (int) $note['id']?></td>
+                        <td><?php echo htmlentities($note['title'])?></td>
+                        <td><?php echo htmlentities( $note['created'])?></td>
+                        <td><a href="/?action=show&id=<?php echo (int) $note['id']?>">opcje</a> </td>
                     </tr>
                         <?php endforeach; ?>
                 </tbody>
