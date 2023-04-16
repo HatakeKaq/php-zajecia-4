@@ -38,6 +38,22 @@ class Database
             throw new StorageExeption ('Nie udalo sie utworzyc notatki',400, $e);
         }
     }
+    public function getNotes(): array
+    {
+        try{
+            $notes=[];
+            $query="SELECT id, title,created FROM notes";
+            $result=$this->conn->query($query,PDO::FETCH_ASSOC);
+            foreach($result as $row){
+                $notes[] =$row;
+            }
+            
+            return $notes;
+        }catch(Throwable $e){
+            throw new StorageExeption('Nie udalo sie pobrac danych o notatkach', 400,$e);
+        }
+    }
+
         private function validateConfig(array $config): void
         {
             if(empty($config['database']) || empty($config['host'])){
