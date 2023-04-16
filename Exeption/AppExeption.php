@@ -2,9 +2,11 @@
 declare(strict_types=1);
 namespace App\Exeption;
 
-use Exeption;
-class AppExeption extends Exeption{
-    
+use Exception;
+class AppExeption extends Exception
+
+{
+
 }
 
 ?>

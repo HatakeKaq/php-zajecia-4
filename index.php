@@ -28,8 +28,9 @@ $controller->run();
 }
 catch(AppExeption $e){
     echo "<h1>Wystapil blad w aplikacji!</h1>";
-    echo '<h3>'.$e=>getMessage() . '</h3>';
+    echo '<h3>'.$e->getMessage().'</h3>';
     }
     catch(Throwable $e){
-        echo "<h1>Wystapil blad w aplikacji!</h1>"
+        echo "<h1>Wystapil blad w aplikacji!</h1>";
+        dump($e);
     }

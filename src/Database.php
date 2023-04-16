@@ -13,26 +13,49 @@ use Throwable;
 
 class Database
 {
+    private PDO $conn;
     public function __construct(array $config)
     {
         try{
-        $this=>ValidateConfig($config);
-        $dsn = "mysql:dbname={$config['database']};host={$config['host']}";
-        $connection = new PD(
-            $dsn,
-            $config['user'],
-            $config['password']
-        );
+        $this->validateConfig($config);
+        $this->createConnection($config);
+       
     }
         catch(PODExeption $e){
             throw new StorageExeption('Connection error');
         }
     }
-        private function validateConfing(array $config): void
+    public function createNote(array $data): void
+    {
+        try{
+            $title=$this->conn->quote($data['title']);
+            $description=$this->conn->quote($data['description']);
+            $created=date('Y-m-d H:i:s');
+            $query="INSERT INTO notes(title,desription,created) VALUES($title,$descriptio,$created)";
+            $result=$this->conn->exec($query);
+        }
+        catch(throwable $e){
+            throw new StorageExeption ('Nie udalo sie utworzyc notatki',400, $e);
+        }
+    }
+        private function validateConfig(array $config): void
         {
             if(empty($config['database']) || empty($config['host'])){
                 throw new ConfigurationExeption('Problem z konfiguracja bazy danych - skontaktuj sie z administratorem');
             }
         }
+        private function createConnection(array $config): void
+        {
+            $dsn="mysql:dbname={$config['database']};host={$config['host']}";
+            $this->conn=new PDO(
+                $dsn,
+                $config['user'],
+                $config['password'],
+                [
+                    PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION
+                ]
+                );
+        }
+
     }
 
