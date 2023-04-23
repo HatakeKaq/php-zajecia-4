@@ -1,9 +1,6 @@
-<b>
-    <?php echo $params['resultCreate'] ?? ""; ?>
-</b>
-<h3>Nowa notatka</h3>
+<h3>Edycja notatki</h3>
 <div>
-    <form action="/?action=create" class="note-form" method="post">
+    <form action="/?action=edit" class="note-form" method="post">
         <ul>
             <li>
                 <label for="title">Tytuł <span class="required">*</span></label>
