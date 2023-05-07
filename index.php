@@ -29,8 +29,14 @@ try {
 } catch (AppException $e) {
     echo "<h1>Wsytąpił błąd w aplikacji!</h1>";
     echo '<h3>' . $e->getMessage() . '</h3>';
+<<<<<<< HEAD
     dump($e);
 } catch (\Throwable $e) {
     echo "<h1> Wystąpił błąd w aplikacji!</h1>";
     dump($e);
+=======
+} catch (\Throwable $e) {
+    echo "<h1> Wystąpił błąd w aplikacji!</h1>";
+    dump($e);
+>>>>>>> cc4b6a376c4ff1e9dd249f059ada02e9dba13773
 }

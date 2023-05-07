@@ -23,9 +23,12 @@
                     case 'created':
                         echo 'Notatka została utworzona!';
                         break;
+<<<<<<< HEAD
                         case 'deleted';
                         echo 'Notatka zostala usunieta!';
                         break;
+=======
+>>>>>>> cc4b6a376c4ff1e9dd249f059ada02e9dba13773
                 }
             }
             ?>
@@ -50,8 +53,12 @@
                             <td><?php echo (int) $note['id'] ?></td>
                             <td><?php echo htmlentities($note['title']) ?></td>
                             <td><?php echo htmlentities($note['created']) ?></td>
+<<<<<<< HEAD
                             <td><a href="/?action=show&id=<?php echo (int) $note['id'] ?>">szczegoly</a></td>
                             <td><a href="/?action=delete&id=<?php echo (int) $note['id'] ?>">usun</a></td>
+=======
+                            <td><a href="/?action=show&id=<?php echo (int) $note['id'] ?>">Opcje</a></td>
+>>>>>>> cc4b6a376c4ff1e9dd249f059ada02e9dba13773
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

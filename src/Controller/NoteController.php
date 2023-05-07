@@ -41,7 +41,10 @@ class NoteController extends AbstractController
         }
         $this->view->render('show', ['note' => $note]);
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> cc4b6a376c4ff1e9dd249f059ada02e9dba13773
 
     public function listAction()
     {
@@ -62,6 +65,7 @@ class NoteController extends AbstractController
         }
         $this->view->render('edit');
     }
+<<<<<<< HEAD
 
     public function deleteAction(): void{
         if($this->request->isPost()){
@@ -76,4 +80,6 @@ class NoteController extends AbstractController
             ['note'=>$note]
         );
     }
+=======
+>>>>>>> cc4b6a376c4ff1e9dd249f059ada02e9dba13773
 }
